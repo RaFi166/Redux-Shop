@@ -7,7 +7,10 @@ export const productSlice = createSlice({
     addProduct: (state, action) => {
       state.push(action.payload);
     },
+    removeCart: (state, action) => {
+      return state.filter((data) => data.id !== action.payload);
+    },
   },
 });
-export const { addProduct } = productSlice.actions;
+export const { addProduct, removeCart } = productSlice.actions;
 export default productSlice.reducer;
